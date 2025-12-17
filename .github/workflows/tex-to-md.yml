@@ -22,7 +22,8 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: TeX -> MD pipeline
-        uses: xuanhao44/TeX-to-Markdown@v0.0.5
+        id: tex2md
+        uses: xuanhao44/TeX-to-Markdown@v0.0.6
         env:
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
         with:
@@ -40,7 +41,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add main.md
+          git add "${{ steps.tex2md.outputs.out_md }}"
 
           if [ "${{ github.event_name }}" = "push" ]; then
             BEFORE="${{ github.event.before }}"
