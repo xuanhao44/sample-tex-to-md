@@ -19,15 +19,15 @@ jobs:
           fetch-depth: 0
 
       - name: TeX -> MD pipeline
-        uses: xuanhao44/TeX-to-Markdown@v0.0.3
+        uses: xuanhao44/TeX-to-Markdown@v0.0.4
         env:
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
         with:
           tex: main.tex
-          images_dir: figs
-          prettier: "false"
-          markdownlint: "false"
-          textlint: "false"
+          images_dir: figures
+          prettier: "true"
+          markdownlint: "true"
+          textlint: "true"
 
       - name: Mark repository as safe
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
