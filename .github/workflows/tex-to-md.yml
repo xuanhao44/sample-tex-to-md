@@ -18,8 +18,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Mark repository as safe
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: TeX -> MD pipeline
-        uses: xuanhao44/TeX-to-Markdown@v0.0.4
+        uses: xuanhao44/TeX-to-Markdown@v0.0.5
         env:
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
         with:
@@ -28,9 +31,6 @@ jobs:
           prettier: "true"
           markdownlint: "true"
           textlint: "true"
-
-      - name: Mark repository as safe
-        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Commit and Push changes
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
