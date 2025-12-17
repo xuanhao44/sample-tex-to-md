@@ -75,9 +75,9 @@ A longtable example.
 
 ## Figures
 
-图像（需要你放一个文件，比如 `figures/demo.pdf`）：
+图像（需要你放一个文件，如 `figures/demo.pdf`）：
 
-[demo](figures/demo.pdf)
+![demo](figures/demo.svg "demo")
 
 ## Code Blocks
 
