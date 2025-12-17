@@ -15,7 +15,7 @@
 
 - 第一项
 
-- 第二项，带数学 $a^2+b^2=c^2$
+- 第二项，带数学 $a^2 + b^2 = c^2$
 
 - 第三项，带自定义宏：$\left\lVert \mathbf{x} \right\rVert$，$\left\langle x, y \right\rangle$
 
