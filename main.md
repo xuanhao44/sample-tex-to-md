@@ -2,28 +2,28 @@
 
 ## Text, Links, Footnotes, Quotes
 
-这是一段普通文本，包含强调 *emph*、加粗 **bold**、等宽 `code`，以及超链接：[Pandoc 官方站点](https://pandoc.org)。
+这是一段普通文本，包含强调 _emph_、加粗 **bold**、等宽 `code`，以及超链接：[Pandoc 官方站点](https://pandoc.org)。
 
 脚注示例[^1]，以及引号：“quoted text”。
 
 | 这是一个自定义环境 `mybox`，里面也包含 <span style="color: blue">**自定义宏渲染**</span>。 |
-|:-------------------------------------------------------------------------------------------|
+| :----------------------------------------------------------------------------------------- |
 
 ### Lists
 
 无序列表：
 
--   第一项
+- 第一项
 
--   第二项，带数学 $a^2+b^2=c^2$
+- 第二项，带数学 $a^2+b^2=c^2$
 
--   第三项，带自定义宏：$\left\lVert \mathbf{x} \right\rVert$，$\left\langle x, y \right\rangle$
+- 第三项，带自定义宏：$\left\lVert \mathbf{x} \right\rVert$，$\left\langle x, y \right\rangle$
 
 有序列表（自定义格式）：
 
-1.  选项 A
+1. 选项 A
 
-2.  选项 B
+2. 选项 B
 
 描述列表：
 
@@ -40,8 +40,9 @@ A longer value text.
 行间公式：
 
 $$
-\int_0^1 x^2\,dx = \frac {1} {3}.
+\int_0^1 x^2 \,dx = \frac {1} {3}.
 $$
+
 多行对齐：
 
 $$
@@ -52,9 +53,9 @@ $$
 
 带编号的定理环境：
 
-**Theorem 1** (Pythagoras). *For a right triangle, $a^2+b^2=c^2$.*
+**Theorem 1** (Pythagoras). _For a right triangle, $a^2+b^2=c^2$._
 
-**Lemma 1**. *If $x \in \mathbb{R}$, then $x^2 \ge 0$.*
+**Lemma 1**. _If $x \in \mathbb{R}$, then $x^2 \ge 0$._
 
 ## Tables
 
@@ -63,7 +64,7 @@ $$
 ### Longtable
 
 | Key | Value |
-|:----|:------|
+| :-- | :---- |
 | Key | Value |
 | A   | 1     |
 | B   | 2     |
@@ -82,14 +83,14 @@ A longtable example.
 
 ### verbatim
 
-``` 
+```
 #!/usr/bin/env bash
 echo "Hello, verbatim!"
 ```
 
 ### listings
 
-``` python
+```python
 def f(x):
     return x*x + 1
 print(f(3))
