@@ -79,6 +79,10 @@ A longtable example.
 
 ![demo](figures/demo.svg "demo")
 
+With label:
+
+![demo](figures/demo.svg "demo")
+
 ## Code Blocks
 
 ### verbatim
