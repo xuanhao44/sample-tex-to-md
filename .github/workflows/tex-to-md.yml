@@ -23,7 +23,7 @@ jobs:
 
       - name: TeX -> MD pipeline
         id: tex2md
-        uses: xuanhao44/TeX-to-Markdown@v0.0.7
+        uses: xuanhao44/TeX-to-Markdown@v0.0.8
         env:
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
         with:
@@ -32,6 +32,7 @@ jobs:
           prettier: "true"
           markdownlint: "true"
           textlint: "true"
+          # input：root_dir: <your-root-dir> # Optional, default is repository root
 
       - name: Commit and Push changes
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
