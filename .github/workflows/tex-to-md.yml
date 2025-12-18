@@ -32,7 +32,7 @@ jobs:
           prettier: "true"
           markdownlint: "true"
           textlint: "true"
-          # input：root_dir: <your-root-dir> # Optional, default is repository root
+          root_dir: . # Optional, default is repository root
 
       - name: Commit and Push changes
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
