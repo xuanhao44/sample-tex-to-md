@@ -40,7 +40,7 @@ A longer value text.
 行间公式：
 
 $$
-\int_0^1 x^2 \,dx = \frac {1} {3}.
+\int_0^1 x^2 \,dx = \frac 13.
 $$
 
 多行对齐：
