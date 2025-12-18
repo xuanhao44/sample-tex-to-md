@@ -53,7 +53,7 @@ $$
 
 带编号的定理环境：
 
-**Theorem 1** (Pythagoras). _For a right triangle, $a^2+b^2=c^2$._
+**Theorem 1** (Pythagoras). _For a right triangle, $a^2 + b^2 = c^2$._
 
 **Lemma 1**. _If $x \in \mathbb{R}$, then $x^2 \ge 0$._
 
@@ -76,10 +76,6 @@ A longtable example.
 ## Figures
 
 图像（需要你放一个文件，如 `figures/demo.pdf`）：
-
-![demo](figures/demo.svg "demo")
-
-With label:
 
 ![demo](figures/demo.svg "demo")
 
