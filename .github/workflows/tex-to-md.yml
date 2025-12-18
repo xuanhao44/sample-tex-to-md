@@ -23,7 +23,7 @@ jobs:
 
       - name: TeX -> MD pipeline
         id: tex2md
-        uses: xuanhao44/TeX-to-Markdown@v0.0.9
+        uses: xuanhao44/TeX-to-Markdown@v0.0.10
         env:
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
         with:
