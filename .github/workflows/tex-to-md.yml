@@ -1,12 +1,13 @@
 name: TeX to Markdown CI
 
 on:
-  push:
-    branches:
-      - main              # Change this if your default branch is different
+  push:                   # Trigger on push events, NO pull requests
     paths:
       - '**/*.tex'        # Trigger only when .tex files change
-  workflow_dispatch:       # Manual trigger for debugging
+  workflow_dispatch:      # Manual trigger for debugging
+
+permissions:
+  contents: write
 
 jobs:
   tex_to_md:
@@ -35,12 +36,15 @@ jobs:
           root_dir: . # Optional, default is repository root
 
       - name: Commit and Push changes
-        if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
+        if: ${{ github.event_name != 'pull_request' }}
         shell: bash
         run: |
           set -euo pipefail
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # make sure to checkout the current branch
+          git checkout -B "${GITHUB_REF_NAME}"
 
           git add "${{ steps.tex2md.outputs.out_md }}"
 
@@ -67,4 +71,4 @@ jobs:
           fi
 
           git commit -m "Automated tex to md conversion and formatting"
-          git push
+          git push origin "HEAD:${GITHUB_REF_NAME}"
