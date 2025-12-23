@@ -63,7 +63,7 @@ $$
 
 ### Longtable
 
-同时测试百分数：$Test percent 100\%$。
+同时测试百分数：Test percent $100\%$。
 
 | Key | Value |
 | :-- | :---- |
