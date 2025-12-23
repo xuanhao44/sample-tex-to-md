@@ -65,6 +65,27 @@
 	这是一个自定义环境 \texttt{mybox}，里面也包含 \myemph{自定义宏渲染}。
 \end{mybox}
 
+\subsection{Percentages}
+
+测试百分数：Test percent $100\%$ 和 100\%。
+
+百分号在 $\LaTeX$ 中是注释符号，因此需要使用反斜杠进行转义以正确显示百分号符号；但并不需要美元符号包裹。
+
+假设包裹，那么经过 CI 转换后仍然是：
+
+\begin{verbatim}
+$100\%$
+\end{verbatim}
+
+但在不同的环境下会有不同的表现：
+
+\begin{itemize}
+	\item VS Code 编辑器的 Markdown 预览中渲染正常。
+	\item GitHub 上的 Markdown 渲染则不完整，显示为“100”后缺少百分号。
+\end{itemize}
+
+所以如果公式仅涉及百分号，建议直接写作“100\%”而非“$100\%$”。
+
 \subsection{Lists}
 
 无序列表：
@@ -135,8 +156,6 @@
 
 \subsection{Longtable}
 
-同时测试百分数：Test percent $100\%$。
-
 \begin{longtable}{ll}
 	\caption{A longtable example. Test percent 100\%} \\
 	\toprule
@@ -191,6 +210,8 @@ print(f(3))
 		\draw[-{Stealth}] (a) -- (b);
 	\end{tikzpicture}
 \end{center}
+
+TODO: 将来会考虑生成 Tikz PDF 图，然后转换为 SVG 嵌入。
 
 \section{Citations (BibLaTeX style placeholder)}
 
