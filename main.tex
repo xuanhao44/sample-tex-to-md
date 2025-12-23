@@ -157,7 +157,7 @@ $100\%$
 \subsection{Longtable}
 
 \begin{longtable}{ll}
-	\caption{A longtable example. Test percent 100\%} \\
+	\caption{A longtable example.} \\
 	\toprule
 	Key & Value                    \\
 	\midrule
@@ -172,6 +172,30 @@ $100\%$
 	D   & 4                        \\
 	\bottomrule
 \end{longtable}
+
+
+\subsection{Table with | in Math}
+
+展示包含竖线的数学公式（绝对值）：
+
+注意：在纯 LaTeX 环境下，公式里直接用 | 是没问题的。但是如果使用了 | 作为绝对值符号，那么必然会在转换成 Markdown 表格的时候遇到问题，因为 Markdown 表格使用 | 作为列分隔符。
+
+所以建议在数学公式中使用 \lvert 和 \rvert 来表示绝对值符号，例如 $\lvert x \rvert$。下面是一个示例表格：
+
+\begin{table}[htbp]
+    \centering
+    \caption{Comparison of performance metrics across different models.}
+    \label{tab:experiment_results}
+    \begin{tabular}{l c c r}
+        \toprule
+        \textbf{Model Name} & \textbf{Accuracy (\%)} & \textbf{Loss Function} & \textbf{Time (ms)} \\
+        \midrule
+        Baseline Model      & 85.2\%                 & $\mathcal{L}_{CE}$     & 45.5 \\
+        Method A            & 88.4\%                 & $|y - \hat{y}|$        & 102.0 \\
+        \textbf{Ours (Pro)} & \textbf{92.1\%}        & $\|\Delta \theta\|_2$  & \textbf{38.2} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \section{Figures}
 
