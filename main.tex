@@ -135,8 +135,10 @@
 
 \subsection{Longtable}
 
+同时测试百分数：$Test percent 100\%$。
+
 \begin{longtable}{ll}
-	\caption{A longtable example.} \\
+	\caption{A longtable example. Test percent 100\%} \\
 	\toprule
 	Key & Value                    \\
 	\midrule
@@ -154,7 +156,7 @@
 
 \section{Figures}
 
-图像（需要你放一个文件，如 \texttt{figures/demo.pdf}）：
+图像（需要你放一个文件，如 \texttt{figures/demo.pdf}），CI 会尝试将其转换为 SVG。
 
 \begin{figure}[h]
 	\centering
