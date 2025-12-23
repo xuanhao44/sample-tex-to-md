@@ -63,6 +63,8 @@ $$
 
 ### Longtable
 
+同时测试百分数：$Test percent 100\%$。
+
 | Key | Value |
 | :-- | :---- |
 | Key | Value |
@@ -71,11 +73,11 @@ $$
 | C   | 3     |
 | D   | 4     |
 
-A longtable example.
+A longtable example. Test percent 100%
 
 ## Figures
 
-图像（需要你放一个文件，如 `figures/demo.pdf`）：
+图像（需要你放一个文件，如 `figures/demo.pdf`），CI 会尝试将其转换为 SVG。
 
 ![demo](figures/demo.svg "demo")
 
