@@ -91,7 +91,25 @@ $$
 | C   | 3     |
 | D   | 4     |
 
-A longtable example. Test percent 100%
+A longtable example.
+
+### Table with \| in Math
+
+展示包含竖线的数学公式（绝对值）：
+
+注意：在纯 LaTeX 环境下，公式里直接用 \| 是没问题的。但是如果使用了 \| 作为绝对值符号，那么必然会在转换成 Markdown 表格的时候遇到问题，因为 Markdown 表格使用 \| 作为列分隔符。
+
+所以建议在数学公式中使用 和 来表示绝对值符号，例如 $\lvert x \rvert$。下面是一个示例表格：
+
+<div id="tab:experiment_results">
+
+| **Model Name** | **Accuracy (%)** | **Loss Function**  | **Time (ms)** |
+| :------------- | :--------------: | :----------------: | ------------: | ---- | -------- |
+| Baseline Model |      85.2%       | $\mathcal{L}_{CE}$ |          45.5 |
+| Method A       |      88.4%       |         \$         |  y - \\hat{y} |
+| **Ours (Pro)** |    **92.1%**     |         $          | \Delta \theta | \_2$ | **38.2** |
+
+Comparison of performance metrics across different models.
 
 ## Figures
 
